@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>United States International Tourism Data</title>
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Lora|Titillium+Web" rel="stylesheet">
+  <link rel="stylesheet" href="styles/project.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+</head>
+<body>
+
+  <h1>Yearly U.S. Trends of International Tourism, 2000-2015</h1>
+  <p>By Jeongmin Ham
+    <br>
+  The travel and tourism industry is one of the biggest industries in the United States, according to Statista. The following graphs show the yearly trends of international tourism with the United States's data. The first graph compares the number of tourists who traveled to the U.S. to the number of people who traveled outside of the U.S, during the 21st century. The second graph shows the trend of expenditure on travel items. Looking at both graphs, it can be concluded that the number of tourists departing the U.S. correlates with the trend of travel items purchased.
+  </p>
+
+  <div id="container"></div>
+
+  <script>
+  Highcharts.chart('container', {
+
+  title: {
+    text: 'Number of Arrivals and Departures, 2000-2015'
+  },
+
+  subtitle: {
+    text: 'Source: data.worldbank.org'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Number of People'
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+  },
+
+  plotOptions: {
+    series: {
+      label: {
+        connectorAllowed: false
+      },
+      pointStart: 2000
+    }
+  },
+
+  series: [{
+    name: 'Arrivals',
+    data: [51238000, 46927000, 43581000, 41218000, 46086000, 49206000, 50977000, 56135000, 58007000, 55103000, 60010000, 62821000, 66657000, 69995000, 75022000, 77510000]
+  }, {
+    name: 'Departures',
+    data: [61327000, 59442000, 58066000, 56250000, 61809000, 63503000, 63663000, 64049000, 63653000, 62051000, 61061000, 59209000, 60697000, 61874000, 68176000, 73453000]
+  }],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+});
+  </script>
+<p><b> Source:</b> World Bank Open Data, <a href="https://data.worldbank.org/country/united-states?view=chart" target="_blank">United States</a>. </p>
+
+  <div id="vessel" style="min-width: 310px; height: 400px; margin: 0 atuo"></div>
+
+
+  <script>
+  Highcharts.chart('vessel', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Expenditures for Travel Items, 2000-2015'
+      },
+      subtitle: {
+          text: 'Source: data.worldbank.org'
+      },
+      xAxis: {
+          categories: [
+              '2000',
+              '2001',
+              '2002',
+              '2003',
+              '2004',
+              '2005',
+              '2006',
+              '2007',
+              '2008',
+              '2009',
+              '2010',
+              '2011',
+              '2012',
+              '2013',
+              '2014',
+              '2015'
+          ],
+          crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Expenditures (current U.S. $)'
+          }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [{
+          name: 'United States',
+          data: [67860000000, 63689000000, 62671000000, 61966000000, 71034000000, 79990000000, 84206000000, 89235000000, 92546000000, 81421000000, 86623000000, 89701000000, 1.00337E+11, 98119000000, 1.05529E+11, 1.12872E+11]
+      }]
+  });
+  </script>
+<p><b> Source:</b> World Bank Open Data, <a href="https://data.worldbank.org/country/united-states?view=chart" target="_blank">United States</a>. </p>
+
+</body>
+</html>

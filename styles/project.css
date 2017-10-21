@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #c6ddf9;
+  color: #000;
+  font-family: "Titillium Web", Mukta, "Lucida Grande", Geneva, sans-serif;
+  margin: 3em 5em;
+}
+
+#container {
+  width: 65%;
+  height: 500px;
+}
+
+#vessel {
+  width: 65%;
+  height: 500px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Lora", "Crimson Text", Georgia, "Palatino Linotype", serif;
+}
+
+p {
+  line-height: 1.4em;
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 2%;
+  }
+  #container, #vessel {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+a:hover {
+  color: #f08f0b;
+}
